@@ -12,7 +12,7 @@ public class StudentListEx {
         
 
         
-        Student student1 = new Student("James Gosling", "Computer science", 9.00f);
+        Student student1 = new Student("James Gosling", "Computer science", 9.0f);
         Student student2 = new Student("Tinica Adrian", "Programming", 7.1f);
         Student student3 = new Student("John Doe", "Physics", 10.00f );
         Student student4 = new Student ("Ray Kroc", "Marketing", 5.6f);
@@ -40,17 +40,17 @@ public class StudentListEx {
                 maxGrade = students.get(i).getGrade();
                 indexOfTheBest = i;
             }
+        }
         System.out.println(indexOfTheBest);
 
         //Mariti nota acestuia cu 0.1 accesandu-l prin lista + index
         
         students.get(indexOfTheBest).grade += 0.1f;
        
-       
+       List<Student> bestStudents = new ArrayList<>();
         //Toti studentii care invata pe 8.0+ sa fie adaugati intr-o lista noua cu numele bestStudents
-        for (int j = 1; j < students.size(); j++) {
+        for (int j = 0; j < students.size(); j++) {
             if (students.get(j).getGrade() > 8.0) {
-                List<Student> bestStudents = new ArrayList<>();
                 bestStudents.add(students.get(j));
             }
         }
@@ -82,7 +82,7 @@ public class StudentListEx {
     }
 }
 
- class Student{
+class Student{
 
 
         String fullname;
