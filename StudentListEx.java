@@ -18,7 +18,7 @@ public class StudentListEx {
         Student student4 = new Student ("Ray Kroc", "Marketing", 5.6f);
         Student student5 = new Student ("Beth Mead", "football player", 9.0f);
 
-        List<Object> students = new ArrayList<>();
+        List<Student> students = new ArrayList<>();
         students.add(student1);
         students.add(student2);
         students.add(student3);
@@ -34,10 +34,10 @@ public class StudentListEx {
         //Gasiti index celui mai bun student din lista si pastrati-l in variabila indexOfTheBest
         
         int indexOfTheBest = 0;
-        float maxGrade = students.get(0).grade;
+        float maxGrade = students.get(0).getGrade();
         for (int i = 1; i < students.size(); i++) {
-            if (students.get(i).grade > maxGrade) {
-                maxGrade = students.get(i).grade;
+            if (students.get(i).getGrade() > maxGrade) {
+                maxGrade = students.get(i).Student.getGrade();
                 indexOfTheBest = i;
             }
         }
@@ -99,6 +99,10 @@ public class StudentListEx {
         @Override
         public String toString() {
             return "Student [fullname=" + fullname + ", specialty=" + specialty + ", grade=" + grade + "]";
+        }
+
+
+    }
         }
 
 
