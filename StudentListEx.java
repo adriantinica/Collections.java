@@ -12,9 +12,9 @@ public class StudentListEx {
         
 
         
-        Student student1 = new Student("James Gosling", "Computer science", 10.00f);
+        Student student1 = new Student("James Gosling", "Computer science", 9.00f);
         Student student2 = new Student("Tinica Adrian", "Programming", 7.1f);
-        Student student3 = new Student("John Doe", "Physics", 7.9f );
+        Student student3 = new Student("John Doe", "Physics", 10.00f );
         Student student4 = new Student ("Ray Kroc", "Marketing", 5.6f);
         Student student5 = new Student ("Beth Mead", "football player", 9.0f);
 
@@ -40,7 +40,30 @@ public class StudentListEx {
                 maxGrade = students.get(i).getGrade();
                 indexOfTheBest = i;
             }
+        System.out.println(indexOfTheBest);
+
+        //Mariti nota acestuia cu 0.1 accesandu-l prin lista + index
+        
+        students.get(indexOfTheBest).grade += 0.1f;
+       
+       
+        //Toti studentii care invata pe 8.0+ sa fie adaugati intr-o lista noua cu numele bestStudents
+        for (int j = 1; j < students.size(); j++) {
+            if (students.get(j).getGrade() > 8.0) {
+                List<Student> bestStudents = new ArrayList<>();
+                bestStudents.add(students.get(j));
+            }
         }
+        
+        for (int k = 0; k < bestStudents.size(); k++) {
+            System.out.println(bestStudents.get(k));
+        }
+        
+        
+        System.out.println(students.get(1).getGrade()); // verificare
+
+
+
 
         //raspundeti la intrebarea ********* - de ce cand declaram toString() in clasa, se zice ca de fapt noi il suprascriem ("override")?
 
@@ -99,10 +122,6 @@ public class StudentListEx {
         @Override
         public String toString() {
             return "Student [fullname=" + fullname + ", specialty=" + specialty + ", grade=" + grade + "]";
-        }
-
-
-    }
         }
 
 
