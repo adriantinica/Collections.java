@@ -37,7 +37,7 @@ public class StudentListEx {
         float maxGrade = students.get(0).getGrade();
         for (int i = 1; i < students.size(); i++) {
             if (students.get(i).getGrade() > maxGrade) {
-                maxGrade = students.get(i).Student.getGrade();
+                maxGrade = students.get(i).getGrade();
                 indexOfTheBest = i;
             }
         }
